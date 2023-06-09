@@ -1,25 +1,51 @@
-import logo from './logo.svg';
-import './App.css';
+// 1)
+import React from 'react';
 
-function App() {
+const Button = ({ onClick, children }) => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <button onClick={onClick}>
+      {children}
+    </button>
+  );
+};
+
+const App = () => {
+  const handleClick = () => {
+    console.log('Кнопка нажата');
+  };
+
+  return (
+    <div>
+      <Button onClick={handleClick}>
+        Нажми меня
+      </Button>
     </div>
   );
-}
+};
 
 export default App;
+
+// 2)
+// import React from 'react';
+
+// const List = ({ items }) => {
+//   return (
+//     <ul>
+//       {items.map((item, index) => (
+//         <li key={index}>{item}</li>
+//       ))}
+//     </ul>
+//   );
+// };
+
+// const App = () => {
+//   const data = ['Пункт 1', 'Пункт 2', 'Пункт 3'];
+
+//   return (
+//     <div>
+//       <List items={data} />
+//     </div>
+//   );
+// };
+
+// export default App;
